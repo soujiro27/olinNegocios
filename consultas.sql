@@ -1,0 +1,1 @@
+select sc.nombre, c.nombre as categoria from subcategorias sc inner join categorias c on sc.idCategoria=c.idCategoria;  

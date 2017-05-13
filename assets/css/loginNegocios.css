@@ -1,0 +1,62 @@
+
+html
+{
+	height: 100%;
+	background-color: #00AE8D;
+}
+
+body
+{
+	background-color: #efefef;
+	font-family: 'Montserrat', sans-serif;
+}
+header
+{
+	background-color:#fff;
+	
+}
+
+
+header div img
+{
+	width: 100%;
+}
+
+header h2
+{
+	font-family: 'Damion', cursive;
+	text-align: center;
+	font-size: 35px;
+}
+
+
+main{
+	background-color: #00AE8D;
+	padding:25px 8px 8px 8px;
+}
+main form input[type=text]
+{
+	border-radius: 8px;
+
+}
+
+main form input[type=password]
+{
+	border-radius: 8px;
+	margin-top: 30px !important;
+}
+
+main form input[type=submit]
+{
+	display: block;
+	margin: 15px auto;
+	background-color: #fff !important;
+	color:#00AE8D !important;
+}
+
+main h3
+{
+	margin-top: 40px;
+	text-align: center;
+	color:#fff;
+}

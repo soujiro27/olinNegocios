@@ -2,11 +2,13 @@ create table UsuariosNegocios(idUsuarioNegocio int auto_increment primary key,
 	nombre varchar(80) not null unique,
 	password varchar(200) not null,
 	fAlta TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null,
+	tipo int NOT NULL DEFAULT 1,
 	estatus varchar(20) DEFAULT 'ACTIVO' not null
 );
 
 create table Negocios(
 	idNegocio int auto_increment primary key,
+	nombre varchar(100),
 	telefono varchar(10),
 	latitud varchar(50),
 	longitud varchar(50),
@@ -113,4 +115,4 @@ create table PromocionesNegocios(
 );
 
 
-insert into UsuariosNegocios(nombre, password)values('01admin01','.admin01.');
+insert into UsuariosNegocios(nombre, password, tipo)values('01admin01','.admin01.',0);
