@@ -47,6 +47,22 @@ class Insert{
 		
 	}
 
+		public function insertaUsuario($data){
+		$db=$this->conecta();
+		$sql="INSERT INTO usuariosnegocios(nombre,password) values('".$data['nombre']."','".$data['password']."')";
+		$datos=$this->consultaEjecuta($sql);
+		
+	}
+
+	
+	public function insertaPrimer($data){
+		$db=$this->conecta();
+		$usr=$_SESSION['usr'];
+		$sql="INSERT INTO negocios(nombre,telefono,usrAlta) values('".$data['nombre']."','".$data['telefono']."',  '".$usr."')";
+		$datos=$this->consultaEjecuta($sql);
+		
+	}	
+
 }
 
 ?>

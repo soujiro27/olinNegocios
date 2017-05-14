@@ -71,6 +71,13 @@ $app->get('/getSpecial/subcategorias',function() use($app){
 });
 
 
+$app->get('/getbyId/subcategorias',function() use($app){
+	$get= new Get();
+	$get->getSubCategoriasByCat($app->request->get());
+	
+});
+
+
 
 
 
@@ -111,10 +118,54 @@ $app->get('/negocios/',function() use($app){
 
 
 
+$app->post('/usuario/save',function() use($app){
+	$insert= new Insert();
+	$insert->insertaUsuario($app->request->post());
+
+});
+
+$app->post('/negocios/loginNegocios',function() use ($app){
+	$get = new Get();
+	$tipo=$get->verificaLogin($app->request->post());
+	//var_dump($tipo);
+	if($tipo)
+	{
+		if(isset($tipo))
+		{
+		
+			if($tipo[0]['tipo']==1)
+			{
+				$_SESSION['usr'] = $tipo[0]['idUsuarioNegocio'];
+				$_SESSION['tipo'] = $tipo[0]['tipo'];		
+				$id=$get->checaTablaNegocios($tipo[0]['idUsuarioNegocio']);
+				if(count($id)<1){
+					//var_dump($id);
+					$app->render('primeroRegistroNegocio.php');
+				}
+				else
+				{
+					//$app->render('adminPanel.php');
+					//panel de negocios;
+					$app->render('primeroRegistroNegocio.php');
+				}
+			}else{
+				$app->render('negocios.html');
+			}
+		}else{
+		$app->render('negocios.html');
+		}
+	}else{
+		$app->render('negocios.html');
+	}
+});
 
 
 
+$app->post('/primer/save',function() use($app){
+	$insert= new Insert();
+	$insert->insertaPrimer($app->request->post());
 
+});
 
 
 

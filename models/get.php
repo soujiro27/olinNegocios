@@ -44,7 +44,20 @@ class Get{
 		echo json_encode($datos);
 	}
 
+	public function checaTablaNegocios($id){
+		$db=$this->conecta();
+		$sql="SELECT * from negocios WHERE idNegocio=".$id;
+		$datos=$this->consultaRetorno($sql);
+		return $datos;
+	}	
 
+	public function getSubCategoriasByCat($id){
+		$db=$this->conecta();
+		$sql="SELECT * from subCategorias WHERE idCategoria=".$id['datos'];
+		$datos=$this->consultaRetorno($sql);
+		
+		echo json_encode($datos);
+	}
 
 }
 

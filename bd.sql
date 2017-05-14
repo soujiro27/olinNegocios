@@ -17,9 +17,9 @@ create table Negocios(
 	usrModificacion int,
 	fModificacion date,
 	estatus varchar(20) DEFAULT 'ACTIVO' not null,
-	idUsuarioNegocio int not null,
-	idSubCategoria int not null,
-	idTipoSuscripcion int not null
+	idUsuarioNegocio int,
+	idSubCategoria int,
+	idTipoSuscripcion int 
 );
 
 create table DireccionesNegocios(idDireccionNegocio int auto_increment primary key,

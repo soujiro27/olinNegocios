@@ -46,6 +46,13 @@ main form input[type=password]
 	margin-top: 30px !important;
 }
 
+main form input[type=email]
+{
+	border-radius: 8px;
+	margin-top: 30px !important;
+}
+
+
 main form input[type=submit]
 {
 	display: block;
@@ -60,3 +67,10 @@ main h3
 	text-align: center;
 	color:#fff;
 }
+
+
+form#registro{
+	display: none;
+}
+
+
